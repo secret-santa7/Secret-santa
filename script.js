@@ -4,7 +4,7 @@ form.addEventListener('submit', function (e) {
     e.preventDefault();
     const guess = document.getElementById('guessInput').value.trim();
     if (guess.toLowerCase() === 'hugo') {
-        showMessage('Félicitations ! Tu as trouvé mon prénom :tada:', 'success');
+        showMessage('Félicitations ! Tu as trouvé ton secret Santa !', 'success');
         fireConfetti(); // Lancer les confettis
     } else {
         showMessage('Oups, mauvaise réponse. Essaie encore.', 'error');
