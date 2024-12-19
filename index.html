@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devine mon prénom</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="container">
+        <h1>Peux-tu deviner mon prénom ?</h1>
+        <p>Indice : Mon prénom commence par un H et rime avec « égo ».</p>
+        <form id="guessForm">
+            <input type="text" id="guessInput" placeholder="Tapez votre réponse ici" required>
+            <button type="submit">Valider</button>
+        </form>
+        <div id="messageBox"></div> <!-- Conteneur pour les messages -->
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
