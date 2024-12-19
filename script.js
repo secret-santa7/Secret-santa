@@ -40,28 +40,38 @@ function fireConfetti() {
     })();
 }
 
-// script.js
-const matrixContainer = document.querySelector('.matrix');
+const canvas = document.getElementById('canv');
+const ctx = canvas.getContext('2d');
 
-// Générer des caractères aléatoires pour l'effet Matrix
-function generateMatrixCharacters() {
-    const columns = Math.floor(window.innerWidth / 20);
-    for (let i = 0; i < columns; i++) {
-        const column = document.createElement('span');
-        column.textContent = randomCharacter();
-        column.style.left = `${i * 20}px`;
-        column.style.animationDuration = `${Math.random() * 3 + 2}s`;
-        column.style.animationDelay = `${Math.random() * 5}s`;
-        matrixContainer.appendChild(column);
-    }
+// Adapter le canvas à la taille de l'écran
+function resizeCanvas() {
+    canvas.width = document.body.offsetWidth;
+    canvas.height = document.body.offsetHeight;
+}
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+
+// Configuration Matrix
+const cols = Math.floor(canvas.width / 20) + 1;
+const ypos = Array(cols).fill(0);
+
+function matrix() {
+    // Fond noir avec légère transparence pour l'effet de traînée
+    ctx.fillStyle = '#0001';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    // Texte vert
+    ctx.fillStyle = '#0f0';
+    ctx.font = '15pt monospace';
+
+    // Dessiner les caractères Matrix
+    ypos.forEach((y, ind) => {
+        const text = String.fromCharCode(Math.random() * 128);
+        const x = ind * 20;
+        ctx.fillText(text, x, y);
+        ypos[ind] = y > canvas.height + Math.random() * 10000 ? 0 : y + 20;
+    });
 }
 
-// Générer un caractère aléatoire (lettres ou chiffres new)
-function randomCharacter() {
-    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
-    return chars.charAt(Math.floor(Math.random() * chars.length));
-}
-
-// Initialiser l'effet Matrix
-generateMatrixCharacters();
-
+// Lancer l'animation
+setInterval(matrix, 50);
