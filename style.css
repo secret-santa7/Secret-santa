@@ -1,28 +1,41 @@
 /* style.css */
 
+/* Canvas en plein écran */
+#canv {
+    position: fixed; /* Fixe le canvas à l'arrière-plan */
+    top: 0;
+    left: 0;
+    width: 100%; /* Prend toute la largeur de l'écran */
+    height: 100%; /* Prend toute la hauteur de l'écran */
+    z-index: -1; /* Derrière le contenu */
+}
+
 /* Style de base */
 body {
     background: black; /* Fond noir */
     color: lime; /* Texte vert Matrix */
     font-family: "Courier New", Courier, monospace; /* Police type console */
     margin: 0;
-    overflow: hidden; /* Nécessaire pour l'effet Matrix */
     height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative; /* Positionnement au premier plan */
+    z-index: 10; /* Devant le canvas */
 }
 
 /* Conteneur principal */
 #container {
     text-align: center;
     padding : 15px;
-    margin : 15px;
+    margin: 15px;
     z-index: 10; /* Par-dessus l'animation Matrix */
     position: relative;
     border: 2px solid #000;
     border-radius: 15px;
     box-shadow: 0 0 20px lime, 0 0 20px lime;
+    background: rgba(0, 0, 0); /* Fond semi-transparent noir */
+
 }
 
 h1 {
