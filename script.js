@@ -39,3 +39,29 @@ function fireConfetti() {
         }
     })();
 }
+
+// script.js
+const matrixContainer = document.querySelector('.matrix');
+
+// Générer des caractères aléatoires pour l'effet Matrix
+function generateMatrixCharacters() {
+    const columns = Math.floor(window.innerWidth / 20);
+    for (let i = 0; i < columns; i++) {
+        const column = document.createElement('span');
+        column.textContent = randomCharacter();
+        column.style.left = `${i * 20}px`;
+        column.style.animationDuration = `${Math.random() * 3 + 2}s`;
+        column.style.animationDelay = `${Math.random() * 5}s`;
+        matrixContainer.appendChild(column);
+    }
+}
+
+// Générer un caractère aléatoire (lettres ou chiffres)
+function randomCharacter() {
+    const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+    return chars.charAt(Math.floor(Math.random() * chars.length));
+}
+
+// Initialiser l'effet Matrix
+generateMatrixCharacters();
+
