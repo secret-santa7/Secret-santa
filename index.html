@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="matrix"></div> <!-- Animation Matrix -->
     <div id="container">
         <h1>Peux-tu deviner mon prénom ?</h1>
         <p><strong>Indice</strong><br/><br/>Mon premier est le son du cheval. <br/> Mon second est le verbe aller en anglais. <br/><br/> Qui suis-je ... ?</p>
@@ -18,9 +19,10 @@
             <input type="text" id="guessInput" placeholder="Tapez votre réponse ici" required>
             <button type="submit">Valider</button>
         </form>
-        <div id="messageBox"></div> <!-- Conteneur pour les messages -->
+        <div id="messageBox"></div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
