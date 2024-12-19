@@ -56,7 +56,7 @@ function generateMatrixCharacters() {
     }
 }
 
-// Générer un caractère aléatoire (lettres ou chiffres)
+// Générer un caractère aléatoire (lettres ou chiffres new)
 function randomCharacter() {
     const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
     return chars.charAt(Math.floor(Math.random() * chars.length));
