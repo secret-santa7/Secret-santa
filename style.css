@@ -16,6 +16,7 @@ body {
 /* Conteneur principal */
 #container {
     text-align: center;
+    padding : 15px;
     z-index: 10; /* Par-dessus l'animation Matrix */
     position: relative;
 }
